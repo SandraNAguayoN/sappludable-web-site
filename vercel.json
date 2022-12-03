@@ -1,4 +1,4 @@
 
 {
-    "rewrites": [{ "source": "/(.*)", "destination": "src/views/index.ejs" }]
+    "rewrites": [{ "source": "/(.*)", "destination": "/index.ejs" }]
 }
