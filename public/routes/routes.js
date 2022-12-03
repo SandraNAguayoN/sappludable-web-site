@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const path = require('path');
-router.get('public', express.static(path.join(__dirname, 'public')));
+router.get('src', express.static(path.join(__dirname, 'src')));
 
 //Ir al la pantalla de inicio de la aplicación
 router.get('/', (req, res) => {
