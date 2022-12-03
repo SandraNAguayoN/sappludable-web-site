@@ -11,8 +11,17 @@ var logger = require('morgan');
 var routes = require('./routes/routes');
 
 
-
 var app = express();
+
+
+var port = process.env.PORT || 3008;
+app.set('port', port);
+
+//Asignación de puerto
+app.listen(app.get('port'), () => {
+    //console.log("Corriendo en puerto" + app.get('port'));
+    console.log("Corriendo en puerto: "+app.get('port'));
+});
 
 
 //Conexión a la base de datos MongoDB
@@ -37,10 +46,11 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'src')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Rutas
 app.use('/', routes);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
