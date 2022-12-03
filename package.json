@@ -8,7 +8,7 @@
     "npm": "8.19.2"
   },
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
