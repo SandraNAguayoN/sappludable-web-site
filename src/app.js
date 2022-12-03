@@ -24,6 +24,12 @@ db.once('open', function () {
   console.log('Connection to DB successful')
 });
 
+
+app.get('public', express.static(path.join(__dirname, 'public')));
+app.get('/', (req, res) => {
+  res.render('index');
+});
+
 //Configuración de BodyParser para manejo de datos en cuerpo de la solicitud
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
